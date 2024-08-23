@@ -10,7 +10,6 @@ export default function TabTwoScreen() {
   const handleReservation = () => {
     if (name && date && time && guests) {
       Alert.alert('Reservation Confirmed', `Thank you ${name}, your reservation for ${guests} guests on ${date} at ${time} is confirmed.`);
-      // כאן תוכל להוסיף לוגיקה נוספת, כמו שליחת מידע לשרת או שמירתו
     } else {
       Alert.alert('Error', 'Please fill out all fields.');
     }
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)', // מוסיף שכבת שקיפות על הרקע
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   title: {
     fontSize: 24,

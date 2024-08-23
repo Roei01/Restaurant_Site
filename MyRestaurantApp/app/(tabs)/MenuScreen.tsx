@@ -4,8 +4,8 @@ import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react
 const menuItems = [
   { id: '1', name: 'Pizza', description: 'Delicious cheese pizza', price: '$10', image: require('../../assets/images/pizza.jpg') },
   { id: '2', name: 'Burger', description: 'Juicy beef burger', price: '$8', image: require('../../assets/images/burger.jpg')  },
-  { id: '3', name: 'sushi', description: 'orginal sushi', price: '$12', image: require('../../assets/images/sushi.jpg')  },
-  { id: '4', name: 'tacos', description: 'tacos', price: '$6', image: require('../../assets/images/tacos.jpg')  },
+  { id: '3', name: 'Sushi', description: 'Original sushi', price: '$12', image: require('../../assets/images/sushi.jpg')  },
+  { id: '4', name: 'Tacos', description: 'Spicy and crunchy tacos', price: '$6', image: require('../../assets/images/tacos.jpg')  },
 ];
 
 const MenuScreen = () => {
@@ -41,10 +41,9 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
   },
   itemImage: {
-    width: 80,    // רוחב התמונה
-    height: 80,   // גובה התמונה
-    borderRadius: 10, // עיגול פינות התמונה (אופציונלי)
-    resizeMode: 'cover', // אפשרות להתאמת גודל התמונה
+    width: 80,
+    height: 80,
+    borderRadius: 10,
   },
   itemDetails: {
     marginLeft: 15,
