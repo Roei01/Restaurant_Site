@@ -15,7 +15,7 @@ export default function AboutPage() {
       <Button
         title="Visit Our Website"
         onPress={() => {
-          // כאן אתה יכול להוסיף קוד להפעלת קישור לאתר או פעולה אחרת
+          "https://is.sce.ac.il/nidp/idff/sso?id=sceloa2&sid=2&option=credential&sid=2&target=https%3A%2F%2Fmoodle.sce.ac.il%2Flogin%2Findex.php"
         }}
       />
     </View>
