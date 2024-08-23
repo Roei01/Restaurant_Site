@@ -1,9 +1,11 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
+import { ImageSourcePropType } from 'react-native';
 
-type CartItem = {
+export type CartItem = {
   id: string;
   name: string;
   price: number;
+  image: ImageSourcePropType;  // עדכון הסוג
 };
 
 type CartContextType = {
@@ -13,7 +15,7 @@ type CartContextType = {
   totalAmount: number;
 };
 
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const useCart = () => {
   const context = useContext(CartContext);

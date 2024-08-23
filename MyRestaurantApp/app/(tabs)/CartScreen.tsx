@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
-import { CartContext } from '../context/CartContext';
+import { useCart,CartItem } from '../context/CartContext';
+
 
 const CartScreen = () => {
-  const { cartItems, removeFromCart, totalAmount } = useContext(CartContext);
+  const { cartItems, removeFromCart, totalAmount } = useCart();
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: { item: CartItem }) => (
     <View style={styles.itemContainer}>
       <Text style={styles.itemName}>{item.name}</Text>
       <Text style={styles.itemPrice}>{item.price}</Text>
@@ -16,13 +17,13 @@ const CartScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={cartItems}
-        renderItem={renderItem}
-        keyExtractor={item => item.id.toString()}
-        ListFooterComponent={() => (
-          <Text style={styles.total}>Total: ${totalAmount}</Text>
-        )}
-      />
+  data={cartItems}
+  renderItem={renderItem}
+  keyExtractor={(item, index) => item.id + index} // שימוש באינדקס כגיבוי
+  ListFooterComponent={() => (
+    <Text style={styles.total}>Total: ${totalAmount}</Text>
+  )}
+/>
     </View>
   );
 };
